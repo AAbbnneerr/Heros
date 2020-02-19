@@ -7,7 +7,7 @@ import logger from 'morgan'
 //Set up dependencies
 const app = express();
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
 //Set up mongoose
