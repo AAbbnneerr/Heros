@@ -1,0 +1,44 @@
+<style>
+    .row {
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+        /* box-shadow: 0px 0px 40px 0px rgb(248, 0, 0) */
+        ;
+        padding: 30px;
+    }
+    
+    .boton-regresar {
+        position: fixed;
+        left: 250px;
+        top: 280px;
+        width: 100px;
+        color: white;
+    }
+    
+    .bio {
+        font-size: 20px;
+    }
+    
+    .heroe-img {
+        align-content: center;
+    }
+</style>
+
+<div class="row justify-content-center animated fadeIn fast">
+
+    <div class="heroe-img" class="col-md-4">
+        <img src={{heroe.img}} alt="heroe image" width="300px">
+        <a href="heroes" class="btn bg-danger boton-regresar">Regresar</a>
+    </div>
+    <div class="col-md-8 ">
+        <h3>{{heroe.nombre | uppercase}} <small>{{heroe.aparicion | date:'y'}}</small></h3>
+        <hr>
+        <p class="bio">{{heroe.bio}}</p>
+        <div>
+            <img *ngIf="company; else elseBlock" src="../../../assets/logomarvel.png" alt=" logo marvel" width='60px'>
+            <ng-template #elseBlock>
+                <img src="../../../assets/dclogo.png" alt="logo dc" width="60px">
+            </ng-template>
+        </div>
+    </div>
+</div>

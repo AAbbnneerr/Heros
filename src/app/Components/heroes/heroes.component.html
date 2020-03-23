@@ -1,0 +1,36 @@
+<style>
+    h1 {
+        color: white;
+        font-size: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    small {
+        color: rgb(0, 89, 255);
+    }
+    
+    .form-control {
+        width: 100px;
+    }
+</style>
+<h1>HEROES <small>MARVEL y DC </small>
+</h1>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Busca a tu heroe favorito</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" (keypress)='filrar(filterValue.value)' ria-describedby="inputGroup-sizing-default" #filterValue>
+</div>
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+        <img class="card-img-top" src="{{heroe.img}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <button class='btn-block btn btn-outline-primary' (click)="verheroe(i)"> Ver más ...</button>
+            <!-- <a class="btn btn-outline-primary btn-block" [routerLink]="['/heroe', i]"> Ver más ...</a>-->
+        </div>
+
+    </div>
+</div>
